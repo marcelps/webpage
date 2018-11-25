@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<title>Frontpage - BELISE. LITE</title>
+
+<!-- Google Tag Manager for WordPress by DuracellTomi -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];//]]>	
+</script>
+<!-- End Google Tag Manager for WordPress by DuracellTomi --><script>window._wca = window._wca || [];</script>
+		<script type="text/javascript">
+		var ajaxurl = 'https://demo.themeisle.com/belise-lite/wp-admin/admin-ajax.php';
+		</script>
+		
+<!-- This site is optimized with the Yoast SEO plugin v8.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Frontpage - BELISE. LITE" />
+<meta property="og:description" content="Welcome to Belise Lite, We hope you sit with us at our table. We offer&hellip;" />
+<meta property="og:url" content="https://demo.themeisle.com/belise-lite/" />
+<meta property="og:site_name" content="BELISE. LITE" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Welcome to Belise Lite, We hope you sit with us at our table. We offer&hellip;" />
+<meta name="twitter:title" content="Frontpage - BELISE. LITE" />
+<meta name="twitter:creator" content="@themeisle" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/demo.themeisle.com\/belise-lite\/","name":"BELISE. LITE","potentialAction":{"@type":"SearchAction","target":"https:\/\/demo.themeisle.com\/belise-lite\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//d5jmkjjpb7yfg.cloudfront.net' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='dns-prefetch' href='//mllj2j8xvfl0.i.optimole.com' />
+<link rel="alternate" type="application/rss+xml" title="BELISE. LITE &raquo; Feed" href="https://demo.themeisle.com/belise-lite/feed/" />
+<link rel="alternate" type="application/rss+xml" title="BELISE. LITE &raquo; Comments Feed" href="https://demo.themeisle.com/belise-lite/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s20206.pcdn.co\/belise-lite\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id='optm_lazyload_noscript_style-inline-css' type='text/css'>
+.optimole-no-script img[data-opt-src] { display: none !important; }
+</style>
+<link rel='stylesheet' id='dashicons-css'  href='https://s20206.pcdn.co/belise-lite/wp-includes/css/dashicons.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='obfx-module-pub-css-menu-icons-0-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=2.6.4' type='text/css' media='all' />
+<link rel='stylesheet' id='obfx-module-pub-css-menu-icons-1-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/themeisle-companion/obfx_modules/menu-icons/css/public.css?ver=2.6.4' type='text/css' media='all' />
+<link rel='stylesheet' id='sb_instagram_styles-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/instagram-feed/css/sb-instagram.min.css?ver=1.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='siteorigin-panels-front-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/siteorigin-panels/css/front-flex.min.css?ver=2.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sow-image-default-bd5cd9da0588-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/uploads/sites/95/siteorigin-widgets/sow-image-default-bd5cd9da0588.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.4.5' type='text/css' media='all' />
+<style id='woocommerce-layout-inline-css' type='text/css'>
+
+	.infinite-scroll .woocommerce-pagination {
+		display: none;
+	}
+</style>
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.4.5' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.4.5' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='boostrap-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/themes/belise-lite/css/bootstrap.min.css?ver=v3.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='belise-style-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/themes/belise-lite/style.css?ver=1.0.16' type='text/css' media='all' />
+<style id='belise-style-inline-css' type='text/css'>
+
+                .hero-image{
+	                    background-image: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/themes/belise-lite/img/custom-header-image.jpg);
+	            }
+</style>
+<link rel='stylesheet' id='belise-woocommerce-style-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/themes/belise-lite/inc/woocommerce/css/woocommerce.css?ver=v1.0.12' type='text/css' media='all' />
+<link rel='stylesheet' id='belise-fonts-css'  href='https://fonts.googleapis.com/css?family=Work+Sans%3A500%2C600%2C700%2C800%2C900%7CLora%3A300%2C400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/themes/belise-lite/css/font-awesome.min.css?ver=v4.7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack-widget-social-icons-styles-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/jetpack/modules/widgets/social-icons/social-icons.css?ver=20170506' type='text/css' media='all' />
+<link rel='stylesheet' id='sib-front-css-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/mailin/css/mailin-front.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://s20206.pcdn.co/belise-lite/wp-content/plugins/jetpack/css/jetpack.css?ver=6.4.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://d5jmkjjpb7yfg.cloudfront.net/latest/optimole_lib.min.js?ver=1.1.0'></script>
+<script type='text/javascript'>
+document.addEventListener( "DOMContentLoaded", function() { document.body.className = document.body.className.replace("optimole-no-script",""); } );
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pf = {"spam":{"label":"I'm human!","value":"b0b31f54b0"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/pirate-forms/public/js/custom-spam.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.8.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sibErrMsg = {"invalidMail":"Please fill out valid email address","requiredField":"Please fill out required fields","invalidDateFormat":"Please fill out valid date format","invalidSMSFormat":"Please fill out valid phone number"};
+var ajax_sib_front_object = {"ajax_url":"https:\/\/demo.themeisle.com\/belise-lite\/wp-admin\/admin-ajax.php","ajax_nonce":"dc3dfaa874","flag_url":"https:\/\/demo.themeisle.com\/belise-lite\/wp-content\/plugins\/mailin\/img\/flags\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/mailin/js/mailin-front.js?ver=1535372877'></script>
+<link rel='https://api.w.org/' href='https://demo.themeisle.com/belise-lite/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.themeisle.com/belise-lite/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s20206.pcdn.co/belise-lite/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+<meta name="generator" content="WooCommerce 3.4.5" />
+<link rel='shortlink' href='https://wp.me/P8HmIO-E' />
+<link rel="alternate" type="application/json+oembed" href="https://demo.themeisle.com/belise-lite/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.themeisle.com%2Fbelise-lite%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://demo.themeisle.com/belise-lite/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.themeisle.com%2Fbelise-lite%2F&#038;format=xml" />
+<link rel="canonical" href="https://themeisle.com/themes/belise-lite" /><meta name="generator" content="Optimole 1.1.0"><!-- Instagram Feed CSS -->
+<style type="text/css">
+.sbi_bio { display: none; }
+</style>
+
+<!-- Google Tag Manager for WordPress by DuracellTomi -->
+<script data-cfasync="false" type="text/javascript">//<![CDATA[//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by DuracellTomi -->
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style>	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+			<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		                <style type="text/css" media="all"
+                       id="siteorigin-panels-layouts-head">/* Layout 40 */ #pgc-40-0-0 { width:42.5943%;width:calc(42.5943% - ( 0.57405738376923 * 30px ) ) } #pl-40 #panel-40-0-0-0 , #pl-40 #panel-40-0-2-0 {  } #pgc-40-0-1 { width:4.624%;width:calc(4.624% - ( 0.9537604736877 * 30px ) ) } #pgc-40-0-2 { width:52.7818%;width:calc(52.7818% - ( 0.47218214254307 * 30px ) ) } #pl-40 .so-panel { margin-bottom:30px } #pl-40 .so-panel:last-child { margin-bottom:0px } @media (max-width:780px){ #pg-40-0.panel-no-style, #pg-40-0.panel-has-style > .panel-row-style { -webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column } #pg-40-0 .panel-grid-cell { margin-right:0 } #pg-40-0 .panel-grid-cell { width:100% } #pgc-40-0-0 , #pgc-40-0-1 { margin-bottom:30px } #pl-40 .panel-grid-cell { padding:0 } #pl-40 .panel-grid .panel-grid-cell-empty { display:none } #pl-40 .panel-grid .panel-grid-cell-mobile-last { margin-bottom:0px }  } </style><script async src='https://stats.wp.com/s-201847.js'></script>
+</head>
+
+<body class="home page-template page-template-template-with-header page-template-template-with-header-php page page-id-40 optimole-no-script siteorigin-panels siteorigin-panels-before-js siteorigin-panels-home woocommerce-no-js">
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header">
+						<div class="top-bar 
+			">
+				<div class="container">
+					<div class="top-bar-content">
+						<div class="social-icons-wrapper">
+							<ul id="menu-social-menu" class="social-icons"><li id="menu-item-686" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-686"><a href="#/facebook.com"><span class="screen-reader-text">Facebook</span></a></li>
+<li id="menu-item-687" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-687"><a href="#/pinterest.com"><span class="screen-reader-text">Pinterest</span></a></li>
+<li id="menu-item-688" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-688"><a href="#/twitter.com"><span class="screen-reader-text">Twitter</span></a></li>
+<li id="menu-item-689" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-689"><a href="#/instagram.com"><span class="screen-reader-text">Instagram</span></a></li>
+</ul>						</div>
+
+						<div class="top-bar-icons-wrapper">
+															<span class="social-icons-toggle"><i class="fa fa-share-alt"></i></span>
+										<div class="custom-search-in-header">
+			<form method="get" class="search-form" action="https://demo.themeisle.com/belise-lite/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+</form>
+		</div>
+		<a href="https://demo.themeisle.com/belise-lite" title="Cart" class="menu-shopping-cart"><i class="fa 
+		fa-shopping-cart"></i></a>						</div>
+						<div class="top-bar-contact-wrapper">
+							<span class="bar-contact">+1 234 567 8990</span>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container header-container">
+				<div class="navbar-header">
+					<div class="site-branding">
+									<p class="site-title"><a href="https://demo.themeisle.com/belise-lite/" rel="home">BELISE. LITE</a></p>
+								</div><!-- .site-branding -->
+
+					<span class="menu-toggle-content">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
+					</span>
+				</div>
+
+				<nav id="site-navigation" class="main-navigation site-navigation">
+					<div class="menu-primary-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-667" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-667"><a href="#">Our Menu</a>
+<ul class="sub-menu">
+	<li id="menu-item-669" class="menu-item menu-item-type-taxonomy menu-item-object-nova_menu menu-item-669"><a href="https://demo.themeisle.com/belise-lite/menu/brunch/">Brunch</a></li>
+	<li id="menu-item-670" class="menu-item menu-item-type-taxonomy menu-item-object-nova_menu menu-item-670"><a href="https://demo.themeisle.com/belise-lite/menu/drinks/">Drinks</a></li>
+	<li id="menu-item-668" class="menu-item menu-item-type-taxonomy menu-item-object-nova_menu menu-item-668"><a href="https://demo.themeisle.com/belise-lite/menu/dinner/">Dinner</a></li>
+	<li id="menu-item-671" class="menu-item menu-item-type-taxonomy menu-item-object-nova_menu menu-item-671"><a href="https://demo.themeisle.com/belise-lite/menu/dessert/">Dessert</a></li>
+</ul>
+</li>
+<li id="menu-item-674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a href="https://demo.themeisle.com/belise-lite/about/">About</a></li>
+<li id="menu-item-676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-676"><a href="https://demo.themeisle.com/belise-lite/shop/">Shop</a></li>
+<li id="menu-item-677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-677"><a href="https://demo.themeisle.com/belise-lite/blog/">Journal</a></li>
+<li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-678"><a href="https://demo.themeisle.com/belise-lite/contact/">Contact</a></li>
+</ul></div>				</nav><!-- #site-navigation -->
+			</div>
+
+		</header><!-- #masthead -->
+
+					<div id="hero">
+								<div class="hero-content big-hero front-page-hero">
+					<div class="container">
+
+						<div class="hero-title-container">
+							<div class="front-page-title"><p>Delicious Starts </p>
+<br />
+<p>right here</p></div>						</div>
+
+						<div class="hero-btn-container">
+							<a href="https://demo.themeisle.com/belise-lite/contact/">Reserve your table</a>						</div>
+					</div><!-- .container -->
+				</div><!-- .hero-content big-hero front-page-hero -->
+				<div class="front-page-hero-background">
+					<div class="front-page-hero-image" style="background-image: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/05/headernew.jpg)"></div>				</div>
+			</div><!-- #hero -->
+			
+		
+		<div id="content" class="site-content">
+
+		<section class="front-page-content">
+			<div class="container">
+				<div class="row">
+					
+	<div class="col-md-12 belise-page-content">
+		<div id="pl-40"  class="panel-layout" ><div id="pg-40-0"  class="panel-grid panel-no-style" ><div id="pgc-40-0-0"  class="panel-grid-cell" ><div id="panel-40-0-0-0" class="so-panel widget widget_sow-image panel-first-child panel-last-child" data-index="0" ><div class="so-widget-sow-image so-widget-sow-image-default-bd5cd9da0588">
+
+<div class="sow-image-container">
+	<noscript><img src="https://mllj2j8xvfl0.i.optimole.com/600/600/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/01/about_photo.jpg" width="600" height="600" sizes="(max-width: 600px) 100vw, 600px" 		class="so-widget-image"/></noscript><img src="https://mllj2j8xvfl0.i.optimole.com/600/600/eco/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/01/about_photo.jpg" data-opt-src="https://mllj2j8xvfl0.i.optimole.com/600/600/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/01/about_photo.jpg" width="600" height="600" sizes="(max-width: 600px) 100vw, 600px" 		class="so-widget-image"/>
+</div>
+
+</div></div></div><div id="pgc-40-0-1"  class="panel-grid-cell panel-grid-cell-empty" ></div><div id="pgc-40-0-2"  class="panel-grid-cell" ><div id="panel-40-0-2-0" class="so-panel widget widget_sow-editor panel-first-child panel-last-child" data-index="1" ><div class="so-widget-sow-editor so-widget-sow-editor-base">
+<div class="siteorigin-widget-tinymce textwidget">
+	<h2 style="padding-top:10px; letter-spacing: .1em; font-size: 40px; margin-bottom: 20px;">Welcome to Belise Lite, We hope you sit with us at our table.</h2>
+<p>We offer a new, innovative kind of eating experience that allows you truly savor cat bite. It's almost like we know exactly what you want before you even do.</p>
+<p>Our ingredients are delicately sourced with both time and care by using the highest standards and best practices as possible.</p>
+<p><a href="https://demo.themeisle.com/belise-lite/about/" class="btn">Read our mission</a></p>
+</div>
+</div></div></div></div></div>	</div>
+
+					</div>
+			</div>
+		</section>
+
+				<section class="front-page-after-content">
+				<div class="container">
+
+											<div class="row">
+							<div class="operation-hours-inner">
+								<div class="operation-hours-title">
+									Hours of operation								</div>
+							</div>
+						</div>
+												<div class="row">
+							<div class="operation-hours-inner">
+								<div class="operation-hours-content">
+									<ul>
+<li><strong>Mon &amp; Tue</strong>
+<p>10am &#8211; 11pm</p>
+</li>
+<li><strong>Wed &amp; Thur</strong>
+<p>10am &#8211; 11pm</p>
+</li>
+<li><strong>Fri &amp; Sat</strong>
+<p>9am &#8211; 12pm</p>
+</li>
+<li><strong>Sun</strong>
+<p>closed</p>
+</li>
+</ul>
+								</div>
+							</div>
+						</div>
+												<div class="row belise-menu-content">
+											<div class="col-sm-12 col-md-6 col-lg-6 food-menu">
+					<div class="food-menu-container">
+						<div class="food-menu-content">
+															<div>
+									<h3 class="food-menu-title">
+										Brunch									</h3>
+								</div>
+								<a href="https://demo.themeisle.com/belise-lite/menu/brunch/" title="See menu">
+									See menu								</a>
+														</div>
+
+															<div class="food-menu-image" style="background: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/03/happenings_0.jpg); background-size:cover"></div>
+														</div>
+				</div>
+								<div class="col-sm-12 col-md-6 col-lg-6 food-menu">
+					<div class="food-menu-container">
+						<div class="food-menu-content">
+															<div>
+									<h3 class="food-menu-title">
+										Dessert									</h3>
+								</div>
+								<a href="https://demo.themeisle.com/belise-lite/menu/dessert/" title="See menu">
+									See menu								</a>
+														</div>
+
+															<div class="food-menu-image" style="background: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/02/dessert_1.jpg); background-size:cover"></div>
+														</div>
+				</div>
+								<div class="col-sm-12 col-md-6 col-lg-6 food-menu">
+					<div class="food-menu-container">
+						<div class="food-menu-content">
+															<div>
+									<h3 class="food-menu-title">
+										Dinner									</h3>
+								</div>
+								<a href="https://demo.themeisle.com/belise-lite/menu/dinner/" title="See menu">
+									See menu								</a>
+														</div>
+
+															<div class="food-menu-image" style="background: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/02/dinner_1.jpg); background-size:cover"></div>
+														</div>
+				</div>
+								<div class="col-sm-12 col-md-6 col-lg-6 food-menu">
+					<div class="food-menu-container">
+						<div class="food-menu-content">
+															<div>
+									<h3 class="food-menu-title">
+										Drinks									</h3>
+								</div>
+								<a href="https://demo.themeisle.com/belise-lite/menu/drinks/" title="See menu">
+									See menu								</a>
+														</div>
+
+															<div class="food-menu-image" style="background: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/02/drinks_1.jpg); background-size:cover"></div>
+														</div>
+				</div>
+										</div>
+										</div>
+			</section>
+					<section class="sidebar front-page-sidebar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-6 col-lg-6 widget"><h3 class="widget-title">Upcoming Events</h3><ul  class="eo-events eo-events-widget"><li class="eo-event-venue-quatre-mains eo-event-future"><span>May 8:00 pm<strong>4 8:00 pm</strong></span><a href="https://demo.themeisle.com/belise-lite/events/event/food-hope-charity-fundraiser-dine/">Food for Hope Charity fundraiser dine-in</a></li><li class="eo-event-venue-bistro-den-huzaar eo-event-future"><span>Jun 4:00 pm<strong>13 4:00 pm</strong></span><a href="https://demo.themeisle.com/belise-lite/events/event/taste-testing-news-anchor-jim-johns/">Taste Testing with News Anchor Jim Johns</a></li></ul></div><div class="col-sm-12 col-md-6 col-lg-6 widget">			<div class="textwidget"><div id="sb_instagram" class="sbi sbi_mob_col_auto sbi_col_2" style="width:100%; background-color: #ffffff; padding-bottom: 10px; " data-id="36577388" data-num="4" data-res="auto" data-cols="2" data-options='{&quot;sortby&quot;: &quot;none&quot;, &quot;showbio&quot;: &quot;false&quot;,&quot;feedID&quot;: &quot;36577388&quot;, &quot;headercolor&quot;: &quot;7e7e80&quot;, &quot;imagepadding&quot;: &quot;5&quot;,&quot;mid&quot;: &quot;M2E4MWE5Zg==&quot;, &quot;disablecache&quot;: &quot;false&quot;, &quot;sbiCacheExists&quot;: &quot;false&quot;,&quot;callback&quot;: &quot;ODlhNmY4NTllNDQzND.cwZWI3NzgwZmJiMWExZjkwMWY=&quot;, &quot;sbiHeaderCache&quot;: &quot;false&quot;}'><div class="sb_instagram_header" style="padding: 10px; padding-bottom: 0;"></div><div id="sbi_images" style="padding: 5px;"><div class="sbi_loader fa-spin"></div></div><div id="sbi_load"></div></div></div>
+		</div>				</div>
+			</div>
+		</section>
+	
+	</div><!-- #content -->
+
+			<section class="ribbon-sidebar">
+				<div id="belise_ribbon-widget-4"><div class="container"><div class="row">		</div></div>
+		<div class="ribbon">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center ribbon-content">
+																<h5>Join our list</h5>
+					
+											<h3>Be the first to hear about news, specials and upcoming events.</h3>
+					
+					<a href="https://demo.themeisle.com/belise-lite/contact/" class="btn">subscribe</a>				</div></div>
+			</div>
+
+			<div class="ribbon-image" style="background: url(https://mllj2j8xvfl0.i.optimole.com/auto/auto/auto/https/s20206.pcdn.co/wp-content/uploads/sites/95/2017/02/contact-hero-image-1.jpg); background-size:cover;)"></div>
+		</div><div class="container"><div class="row">
+
+			</div></div></div>		</section>
+	
+	<footer id="colophon" class="site-footer">
+				<div class="container">
+			<div class="row footer-widgets">
+									<div class="col-sm-12 col-md-4">
+						<div id="text-6">			<div class="textwidget"></div>
+		</div>					</div>
+													<div class="col-sm-12 col-md-4">
+						<div id="text-5">			<div class="textwidget"><div style="text-align:center; font-family:'Work Sans', sans-serif"><h2 style="font-family:'Work Sans', sans-serif; text-transform: none;font-weight: 800; padding-bottom: 14px; font-size:35px; letter-spacing: .1em">BELISE. LITE</h2><span style="letter-spacing: 0.1em; line-height: 30px;">
+209 EAST NINTH STREET<br/>NASHVILLE, TN 38322<br/>+1 234 567 8990
+</span>
+</div></div>
+		</div>					</div>
+											</div> <!-- .footer-widgets -->
+		</div>
+	
+		<div class="footer-bar
+		">
+			<div class="container">
+								<div class="site-info pull-left">
+					<a href="https://themeisle.com/themes/belise/" rel="nofollow">Belise</a> <span class="sep"> | </span> Powered by <a href="http://wordpress.org/" rel="nofollow">WordPress</a>				</div><!-- .site-info -->
+				
+				<div class="footer-bar-content pull-right">
+					<div class="footer-bar-inner">
+						<ul id="menu-social-menu-1" class="social-icons"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-686"><a href="#/facebook.com"><span class="screen-reader-text">Facebook</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-687"><a href="#/pinterest.com"><span class="screen-reader-text">Pinterest</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-688"><a href="#/twitter.com"><span class="screen-reader-text">Twitter</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-689"><a href="#/instagram.com"><span class="screen-reader-text">Instagram</span></a></li>
+</ul><span class="bar-contact">BELISE@THEMEISLE.COM</span>					</div>
+				</div>
+			</div>
+		</div> <!-- .footer-bar -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://demo.themeisle.com/belise-lite/wp-admin/admin-ajax.php";
+</script>
+
+<!-- Google Tag Manager (noscript) -->	<div style="display:none">
+	</div>
+	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<script type='text/javascript'>
+/* <![CDATA[ */
+var sb_instagram_js_options = {"sb_instagram_at":"36577388.M2E4MWE5Zg==.ODlhNmY4NTllNDQzND.cwZWI3NzgwZmJiMWExZjkwMWY=","font_method":"svg"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/instagram-feed/js/sb-instagram.min.js?ver=1.9.1'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201847'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/belise-lite\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/belise-lite\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.themeisle.com\/belise-lite","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=3.4.5'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/belise-lite\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/belise-lite\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=3.4.5'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/belise-lite\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/belise-lite\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_0ddfa60661fbfaab31de45b741638b4d","fragment_name":"wc_fragments_0ddfa60661fbfaab31de45b741638b4d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=3.4.5'></script>
+<script type='text/javascript'>
+		jQuery( 'body' ).bind( 'wc_fragments_refreshed', function() {
+			jQuery( 'body' ).trigger( 'jetpack-lazy-images-load' );
+		} );
+	
+</script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2018Novaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/themes/belise-lite/js/skip-link-focus-fix.js?ver=20130115'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-content/themes/belise-lite/js/functions.js?ver=20120206'></script>
+<script type='text/javascript' src='https://s20206.pcdn.co/belise-lite/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type="text/javascript">document.body.className = document.body.className.replace("siteorigin-panels-before-js","");</script><script type='text/javascript' src='https://stats.wp.com/e-201847.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.4.2',blog:'128546138',post:'40',tz:'0',srv:'demo.themeisle.com'} ]);
+	_stq.push([ 'clickTrackerInit', '128546138', '40' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"9767e3393c","applicationID":"605644","transactionName":"MhBSZQoZVxcAUxVYDAtacVIMEVYKTlYTXg0RWEBQHx0=","queueTime":0,"applicationTime":417,"atts":"HldRE0IDRBk=","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script></body>
+</html>
