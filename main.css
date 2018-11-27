@@ -39,7 +39,7 @@ blockquote {
 blockquote h2 { padding-right: 40px; margin: 0px; }
 header.dark blockquote a {color: orange; text-decoration: underline;}
 header.light blockquote a {text-decoration: underline;}
-header { min-height: 450px; }
+header { min-height: 50px; }
 header.dark { background-color: #444; }
 header.light { background-color: #fff; }
 
