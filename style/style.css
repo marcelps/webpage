@@ -1,10 +1,5 @@
-/*
-body, html {
-    height: 100%;
-}
-*/
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../photographer.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/photographer.jpg");
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,4 +18,19 @@ body, html {
 
 .footer-links a.nav-link {
     text-align: center;
+}
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.owl-prev {
+    left: 0rem;
+}
+
+.owl-next {
+    right: 0rem;
 }
