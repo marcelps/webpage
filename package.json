@@ -8,6 +8,7 @@
     "bootstrap": "^4.1.3",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",
+    "gulp-ejs": "^3.3.0",
     "gulp-rename": "^1.4.0",
     "jquery": "^3.3.1",
     "owl.carousel": "^2.3.4"
