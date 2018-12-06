@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+</head>
+<body>
+
+<%- include('../partials/nav', {filename: 'carousel'}) %>
+
+<% include ../partials/hero %>
+
+<div class="container-fluid">
+    <div class="owl-carousel owl-theme">
+        <img class="owl-lazy" data-src="https://placehold.it/350x250&text=4" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x250&text=5" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x250&text=6" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x250&text=7" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x250&text=8" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x400&text=9" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x400&text=10" alt="">
+        <img class="owl-lazy" data-src="https://placehold.it/350x450&text=11" alt="">
+    </div>
+</div>
+
+<% include ../partials/footer %>
+
+<script src="js/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            responsive : {
+                // breakpoint from 0 up
+                0: {
+                    dots: false,
+                    items: 1
+                },
+                768: {
+                    dots: false,
+                    items: 2
+                },
+                992: {
+                    dots: true,
+                    items: 3
+                }
+            },
+            lazyLoad: true,
+            nav: true,
+            //lazyLoadEager: 1,
+            loop: true,
+            margin: 10
+        });
+    });
+</script>
+</body>
+</html>
