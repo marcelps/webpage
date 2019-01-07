@@ -7,7 +7,7 @@ watch('style/*.css', minifyCss);
 watch('templates/**/*.ejs', ejsTemplate);
 
 function ejsTemplate() {
-    return src('templates/pages/*.ejs')
+    return src('templates/pages/**/*.ejs')
         .pipe(ejs({}, {}, {ext: '.html'}))
         .pipe(dest('public'));
 }
