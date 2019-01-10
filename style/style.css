@@ -16,12 +16,39 @@ body {
     position: relative;
 }
 
+.hero-image-top,
+.hero-image-bottom {
+    height: 50%;
+}
+
+.hero-image-top {
+    border-bottom: 2px solid #ffffff;
+}
+
 .hero-text {
     text-align: left;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-text-top {
+    text-align: left;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-20%, -40%);
+    color: white;
+}
+
+.hero-text-bottom {
+    text-align: right;
+    position: absolute;
+    top: 40%;
+    right: 20%;
+    transform: translate(20%, -40%);
     color: white;
 }
 
